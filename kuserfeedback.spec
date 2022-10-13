@@ -8,7 +8,7 @@
 Summary:	Kuser feedback
 Name:		kuserfeedback
 Version:	1.2.0
-Release:	1
+Release:	2
 License:	BSD-3-Clause, MIT
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/kuserfeedback/%{name}-%{version}.tar.xz
@@ -78,6 +78,9 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_libdir}/libKUserFeedbackCore.so.1
 %{_libdir}/libKUserFeedbackWidgets.so.1.*.*
 %ghost %{_libdir}/libKUserFeedbackWidgets.so.1
+%dir %{_libdir}/qml
+%dir %{_libdir}/qml/org
+%dir %{_libdir}/qml/org/kde
 %dir %{_libdir}/qml/org/kde/userfeedback
 %{_libdir}/qml/org/kde/userfeedback/libKUserFeedbackQml.so
 %{_libdir}/qml/org/kde/userfeedback/qmldir
@@ -88,5 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libKUserFeedbackCore.so
 %{_libdir}/libKUserFeedbackWidgets.so
 %{_includedir}/KUserFeedback
+%dir %{_prefix}/mkspecs
+%dir %{_prefix}/mkspecs/modules
 %{_prefix}/mkspecs/modules/qt_KUserFeedbackCore.pri
 %{_prefix}/mkspecs/modules/qt_KUserFeedbackWidgets.pri
